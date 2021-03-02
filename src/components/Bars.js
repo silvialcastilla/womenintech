@@ -2,8 +2,8 @@ import React from 'react';
 // import ReactDOM from 'react-dom';
 import ChartistGraph from 'react-chartist';
 
-class Bar extends React.Component {
-  render() {
+function Bar() {
+
 
     // var data = {
     //   labels: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8', 'W9', 'W10'],
@@ -45,7 +45,7 @@ class Bar extends React.Component {
         type={type} />
       </div>
     )
-  }
+  
 }
 
 export default Bar;
