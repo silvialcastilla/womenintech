@@ -1,6 +1,7 @@
 Women in Tech
 
-
+## Components Tree 🧩
+```
 App
  |__ NavBar
  |__ Router
@@ -11,5 +12,9 @@ App
                         |__ Bar Chart
               |__ Container
                         |__ Line Chart
+        |                
         |__ About
+ |       
  |__ Footer
+
+ ```
