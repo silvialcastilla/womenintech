@@ -173,18 +173,82 @@ function PieChart() {
 
         <label>Selecciona un país a comparar</label>
         <select onChange={(event) => setFirstCountry(event.target.value)}>
-          <option value="es">España</option>
-          <option value="fr">Francia</option>
-          <option value="uk">Reino Unido</option>
-          <option value="ue">Unión Europea</option>
+        <option value="EU27_2020">Unión Europea</option>
+          <option value="BE">Belgia</option>
+          <option value="BG">Bulgaria</option>
+          <option value="CZ">Chequia</option>
+          <option value="DK">Dinamarca</option>
+          <option value="DE">Alemania</option>
+          <option value="EE">Estonia</option>
+          <option value="IE">Irlanda</option>
+          <option value="EL">Grecia</option>
+          <option value="ES">España</option>
+          <option value="FR">Francia</option>
+          <option value="HR">Croacia</option>
+          <option value="IT">Italia</option>
+          <option value="CY">Chipre</option>
+          <option value="LV">Letonia</option>
+          <option value="LT">Lituania</option>
+          <option value="LU">Luxemburgo</option>
+          <option value="HU">Hungria</option>
+          <option value="MT">Malta</option>
+          <option value="NL">Países Bajos</option>
+          <option value="AT">Australia</option>
+          <option value="PL">Polonia</option>
+          <option value="PT">Portugal</option>
+          <option value="RO">Rumanía</option>
+          <option value="SI">Eslovenia</option>
+          <option value="SK">Eslovaquia</option>
+          <option value="FI">Finlandia</option>
+          <option value="SE">Suecia</option>
+          <option value="IS">Islandia</option>
+          <option value="NO">Noruega</option>
+          <option value="CH">Suiza</option>
+          <option value="UK">Reino Unido</option>
+          <option value="ME">Montenegro</option>
+          <option value="MK">Macedonia</option>
+          <option value="RS">Serbia</option>
+          <option value="TR">Turquia</option>
         </select><br/>
 
         <label>Selecciona un país a comparar</label>
         <select onChange={(event) => setSecondCountry(event.target.value)}>
-          <option value="es">España</option>
-          <option value="fr">Francia</option>
-          <option value="uk">Reino Unido</option>
-          <option value="ue">Unión Europea</option>
+          <option value="EU27_2020">Unión Europea</option>
+          <option value="BE">Belgia</option>
+          <option value="BG">Bulgaria</option>
+          <option value="CZ">Chequia</option>
+          <option value="DK">Dinamarca</option>
+          <option value="DE">Alemania</option>
+          <option value="EE">Estonia</option>
+          <option value="IE">Irlanda</option>
+          <option value="EL">Grecia</option>
+          <option value="ES">España</option>
+          <option value="FR">Francia</option>
+          <option value="HR">Croacia</option>
+          <option value="IT">Italia</option>
+          <option value="CY">Chipre</option>
+          <option value="LV">Letonia</option>
+          <option value="LT">Lituania</option>
+          <option value="LU">Luxemburgo</option>
+          <option value="HU">Hungria</option>
+          <option value="MT">Malta</option>
+          <option value="NL">Países Bajos</option>
+          <option value="AT">Australia</option>
+          <option value="PL">Polonia</option>
+          <option value="PT">Portugal</option>
+          <option value="RO">Rumanía</option>
+          <option value="SI">Eslovenia</option>
+          <option value="SK">Eslovaquia</option>
+          <option value="FI">Finlandia</option>
+          <option value="SE">Suecia</option>
+          <option value="IS">Islandia</option>
+          <option value="NO">Noruega</option>
+          <option value="CH">Suiza</option>
+          <option value="UK">Reino Unido</option>
+          <option value="ME">Montenegro</option>
+          <option value="MK">Macedonia</option>
+          <option value="RS">Serbia</option>
+          <option value="TR">Turquia</option>
         </select><br/>
         <input type="submit" value="Submit" />
       </form>
