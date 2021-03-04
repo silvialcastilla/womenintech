@@ -1,0 +1,57 @@
+ .nav{
+        width: 100%;
+    }
+        
+   .nav-desktop{
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        margin: 0px 55px;
+    }
+
+    .nav-logo{
+        width: 80px;
+        margin: 10px 0px 0px 30%;
+        margin-left: 30%;
+    }
+    .container{
+        margin: 0px;
+    }
+    .menu-link{
+        text-decoration: none;
+        margin: 20px 2% 40px 2%;
+        font-family: 'arial';
+        font-size: 14px;
+        color: white;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+    }
+      
+    .menu-link:hover{
+        color: red;
+    }
+      
+    .menu-link::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scale(0);
+        height: 3px;
+        bottom: -3px;
+        left: 0;
+        background-color: transparent;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+   
+    .menu-link:hover::before{
+        background-color: red;
+        transform: scalex(1);
+        transform-origin: bottom center;
+        transition: transform 0.25s ease-out;
+    } 
+    
+    .logo-the-bridge > img{
+        width: 50%
+    }
