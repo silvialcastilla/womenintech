@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { Link } from 'react-router-dom'
@@ -42,17 +42,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function NavBar(props) {
-    const [loggedIn, setLoggedIn] = useState(false);
-    useEffect(() => {
-        let token = localStorage.getItem('token');
-        if(token!==null) setLoggedIn(true);
-    }, []);
     const classes = useStyles();
+    const [activeOne, setActiveOne] = useState(true)
+    const [activeTwo, setActiveTwo] = useState(false)
 
-    const preventDefault = (event) => event.preventDefault();
-    const logout = ()=>{
-        localStorage.removeItem('token')
-        setLoggedIn(false)
+    useEffect(() => {
+  
+    }, [])
+
+    const handleClick = (num) => {
+        if(num === 1){
+            setActiveOne(true)
+            setActiveTwo(false)
+        }
+        if(num === 2){
+            setActiveTwo(true)
+            setActiveOne(false)
+        }
     }
     return (
         <div>
@@ -62,9 +68,9 @@ export default function NavBar(props) {
                         <img src={LogoTheBridge} alt="logo-the-bridge" />
                     </div>
                     <div className="nav-desktop">
-                        <Link to="/Dashboard" className="menu-link"><span className="menu-highlight">Dashboard</span></Link>
-                        <Link to="/Nosotras" className="menu-link"><span className="menu-highlight">Nosotras</span></Link>
-                        <Link to="/The Bridge" className="menu-link"><span className="menu-highlight">The Bridge</span></Link>
+                        <Link to="/Dashboard" className={`menu-link ${activeOne && 'active'}`} onClick={()=> handleClick(1)}><span className="menu-highlight">Dashboard</span></Link>
+                        <Link to="/Nosotras" className={`menu-link ${activeTwo && 'active'}`} onClick={()=> handleClick(2)}><span className="menu-highlight">Nosotras</span></Link>
+                        <a href="https://thebridge.tech/" target="_blank" className="menu-link"><span className="menu-highlight">The Bridge</span></a>
                     </div>
                     <div className="nav-tablet">
                         <MobileMenu />

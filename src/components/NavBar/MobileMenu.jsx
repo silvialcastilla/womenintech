@@ -66,7 +66,7 @@ export default function TemporaryDrawer(props) {
           {text:'Nosotras', url:'/Nosotras'}, 
           {text: 'The Bridge', url:'https://thebridge.tech/'}
         ].map((item, index) => (
-            <a href={item.url} style={styles.link} key={index}>
+            <a href={item.url} style={styles.link} key={index} target={item.text === 'The Bridge' ? '_blank': ''}>
               <ListItem button key={item.text}>
                 <ListItemText primary={item.text} style={styles.listItem}/>
               </ListItem>

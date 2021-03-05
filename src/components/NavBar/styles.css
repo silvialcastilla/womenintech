@@ -29,8 +29,12 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 26px;
+        cursor: pointer;
     }
     .menu-link:hover{
+        font-weight: 600;
+    }
+    .menu-link:active{
         font-weight: 600;
     }
     .menu-link::before{
@@ -54,6 +58,17 @@
         transform: scalex(0.8) translate(19px, 0px);
         transform-origin: bottom center;
         transition: transform 0.25s ease-out;
+    }
+    
+    .active::before{
+        background-color: rgba(140, 5, 130, 0.3);
+        transform: scalex(0.8) translate(19px, 0px);
+        transform-origin: bottom center;
+        transition: transform 0.25s ease-out;
+    }
+
+    .active{
+        font-weight: 600;
     }
     
     .logo-the-bridge > img{
