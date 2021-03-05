@@ -7,7 +7,7 @@ import Container from '../../components/container'
 function ArchivePage() {
   return (
     <div className="archive-page">
-      <h1>HomePage</h1>
+      <h1>Educación vs empleos TIC</h1>
       <Container component={Lineal} />
     </div>
   );
