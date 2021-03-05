@@ -4,47 +4,13 @@ import "./DoughnutChart.css";
 
 import axios from "axios";
 
-const arraydePrueba = {
-  data: {
-    male: [
-      48.27,
-      48.17,
-      48.07,
-      47.95,
-      47.79,
-      48.06,
-      47.7,
-      47.47,
-      47.55,
-      47.34,
-      47.22,
-    ],
-    female: [
-      51.73,
-      51.83,
-      51.93,
-      52.05,
-      52.21,
-      51.94,
-      52.3,
-      52.53,
-      52.45,
-      52.66,
-      52.78,
-    ],
-  },
-  units: "Percentage",
-  name:
-    "Population who studied upper secondary, post-secondary non-tertiary and tertiary education by sex",
-};
-
 function DoughnutChart() {
   const [year, setYear] = useState("2009");
   const [firstCountry, setFirstCountry] = useState("ES");
   const [secondCountry, setSecondCountry] = useState("ES");
   const [dataFirstChart, setDataFirstChart] = useState(null);
   const [dataSecondChart, setDataSecondChart] = useState(null);
-  const [name, setName] = useState("");
+  const [firstPercentage, setFirstPercentage] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -53,8 +19,7 @@ function DoughnutChart() {
         ` https://tecnologia-sustantivo-femenino.herokuapp.com/edu/${firstCountry}/${year}`
       )
       .then((res) => {
-        console.log([res.data.data.female, res.data.data.male]);
-        setName(res.data.name);
+        setFirstPercentage(res.data.data.female);
         setDataFirstChart([res.data.data.female, res.data.data.male]);
       });
 
@@ -63,7 +28,6 @@ function DoughnutChart() {
         `https://tecnologia-sustantivo-femenino.herokuapp.com/edu/${secondCountry}/${year}`
       )
       .then((res) => {
-        setName(res.data.name);
         setDataSecondChart([res.data.data.female, res.data.data.male]);
       });
   };
@@ -189,7 +153,8 @@ function DoughnutChart() {
         </select>
         <input type="submit" className="doughnut-button" value="Representar" />
       </form>
-      <div>
+      <div className="doughnut-div">
+        <p className="first-percentage">{firstPercentage}%</p>
         <Doughnut
           data={firstDoughnut}
           options={{

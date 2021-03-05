@@ -43,7 +43,18 @@ option {
   border-radius: 12px;
 }
 
+canvas {
+  width: 150px;
+  height: 150px;
+}
+
+.first-percentage {
+  position: relative;
+  color: black;
+  margin: 0;
+}
 .doughnut-div {
   display: flex;
+
   flex-direction: row;
 }
