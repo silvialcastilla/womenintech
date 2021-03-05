@@ -1,0 +1,49 @@
+.doughnut {
+  background-color: #66149c;
+  border-radius: 12px;
+  width: 512px;
+  height: 313px;
+  border-radius: 12px;
+}
+
+select {
+  background-color: #66149c;
+  color: white;
+  margin-top: 45px;
+  margin-left: 40px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 0;
+  width: 50px;
+  outline: none;
+}
+
+option {
+  background-color: #66149c;
+  color: white;
+  margin-right: 38.04px;
+}
+
+.doughnut-button {
+  margin-top: 29px;
+  margin-left: 96px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #22172b;
+
+  position: absolute;
+  width: 106px;
+
+  /* BG */
+
+  background: #fffafe;
+  box-shadow: 0px 4px 12px #3b0c5a;
+  border-radius: 12px;
+}
+
+.doughnut-div {
+  display: flex;
+  flex-direction: row;
+}

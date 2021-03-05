@@ -1,0 +1,35 @@
+.rectang {
+  position: absolute;
+  width: 220px;
+  height: 20px;
+  margin: 0px;
+  margin-top: 30px;
+  margin-left: 300px;
+  background: rgba(140, 5, 130, 0.3);
+  opacity: 0.5;
+}
+
+.rectangu {
+  position: absolute;
+  width: 175px;
+  height: 20px;
+  margin: 0px;
+  margin-top: 30px;
+  margin-left: 300px;
+  background: rgba(140, 5, 130, 0.3);
+  opacity: 0.5;
+}
+
+.home-page-first-p {
+  height: 105px;
+  width: 1150px;
+  border-radius: nullpx;
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.home-page-general-div {
+  padding-left: 150px;
+  display: flex;
+}
