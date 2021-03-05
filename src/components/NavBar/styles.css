@@ -1,57 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+ 
  .nav{
         width: 100%;
     }
         
    .nav-desktop{
         display: flex;
-        width: 100%;
-        justify-content: flex-end;
-        margin: 0px 55px;
+        width: 50%;
+        justify-content: space-between;
+        margin: 0;
     }
 
-    .nav-logo{
-        width: 80px;
-        margin: 10px 0px 0px 30%;
-        margin-left: 30%;
+    .logo-the-bridge{
+        position: absolute;
+        left: 36px;
     }
     .container{
         margin: 0px;
     }
+
     .menu-link{
-        text-decoration: none;
-        margin: 20px 2% 40px 2%;
-        font-family: 'arial';
-        font-size: 14px;
-        color: white;
-        display: inline-block;
         position: relative;
-        cursor: pointer;
+        z-index: 1;
+        color: #10182B;
+        text-decoration: none;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
     }
-      
     .menu-link:hover{
-        color: red;
+        font-weight: 600;
     }
-      
     .menu-link::before{
-        content: '';
-        position: absolute;
-        width: 100%;
-        transform: scale(0);
-        height: 3px;
-        bottom: -3px;
-        left: 0;
-        background-color: transparent;
-        transform-origin: bottom right;
-        transition: transform 0.25s ease-out;
-    }
-   
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            transform: scale(0);
+            left: 0;
+            background-color: transparent;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+            height: 9px;
+            bottom: 2px;
+            background-color: transparent;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
     .menu-link:hover::before{
-        background-color: red;
-        transform: scalex(1);
+        background-color: rgba(140, 5, 130, 0.3);
+        transform: scalex(0.8) translate(19px, 0px);
         transform-origin: bottom center;
         transition: transform 0.25s ease-out;
-    } 
+    }
     
     .logo-the-bridge > img{
-        width: 50%
+        width: 36px;
     }
+
+    .nav-tablet{
+        display: none;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .menu-link{
+            color: #10182B;
+            text-decoration: none;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 26px;
+        }
+        .nav-tablet{
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            margin-right: 20px;
+        }
+        .nav-desktop{
+            display: none;
+        }
+      }
+ 
+    @media only screen and (max-width: 360px) {
+      }

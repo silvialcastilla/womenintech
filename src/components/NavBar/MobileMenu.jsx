@@ -15,11 +15,10 @@ const useStyles = makeStyles((theme) => ({
     list: {
         width: 250,
         fontSize: '100px',
-        color: 'red'
+        fontFamily: 'Inter'
     },
     fullList: {
         width: 'auto',
-        color: 'red'
     },
     links: {
         fontSize: '120px'
@@ -63,6 +62,7 @@ export default function TemporaryDrawer(props) {
       <List style={styles.list}>
         <CloseIcon style={styles.closeIcon} onClick={toggleDrawer('right', false)}/>
         {[
+          {text:'Dashboard', url:'/Dashboard'}, 
           {text:'Nosotras', url:'/Nosotras'}, 
           {text: 'The Bridge', url:'https://thebridge.tech/'}
         ].map((item, index) => (
@@ -77,26 +77,26 @@ export default function TemporaryDrawer(props) {
   );
   const styles = {
     div: {
-      background: 'black'
+      background: '#FDFDFF'
     },
     list:{
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-end',
-      backgroundColor: 'black'
+      backgroundColor: '#FDFDFF'
     },
     listItem:{
       textAlign: 'right',
       fontFamily: `${Theme.secondaryFont}`,
       fontSize: '12px',
       fontWeight: '200',
-      color: `${Theme.white}`,
+      color: '#10182B',
     },
     closeIcon:{
       display: 'flex', 
       alignSelf: 'flex-end', 
       margin: '15px 15px 20px 0px',
-      color: 'red'
+      color: 'rgba(140, 5, 130, 0.3)'
     },
     link: {
       textDecoration: 'none',
@@ -108,7 +108,7 @@ export default function TemporaryDrawer(props) {
         <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" 
         onClick={toggleDrawer('right', true)}
         >
-            <MenuIcon style={{color:`${Theme.white}`, fontSize: '150%'}}/>
+            <MenuIcon style={{color: '#10182B', fontSize: '150%'}}/>
         </IconButton> 
         )
   }

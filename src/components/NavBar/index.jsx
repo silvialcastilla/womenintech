@@ -4,7 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { Link } from 'react-router-dom'
 import MobileMenu from './MobileMenu'
-import LogoTheBridge from '../../assets/logo-the-bridge.svg'
+import LogoTheBridge from '../../assets/logo-cuadrado.svg'
 import './styles.css'
 
 
@@ -15,10 +15,13 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: 'none',
     },
     toolBar: {
-        backgroundColor: 'black',
+        backgroundColor: '#FDFDFF',
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
+        alignContent: 'center',
         padding: 0,
+        minHeight: '72px',
+        maxHeight: '72px'
     },
     title: {
         flexGrow: 1,
@@ -53,14 +56,15 @@ export default function NavBar(props) {
     }
     return (
         <div>
-            <AppBar className={classes.appBar} position="fixed" elevation={2}>
+            <AppBar className={classes.appBar} position="fixed" elevation={1}>
                 <Toolbar className={classes.toolBar}>
-                    <a href="/" className="logo-the-bridge">
+                    <div className="logo-the-bridge">
                         <img src={LogoTheBridge} alt="logo-the-bridge" />
-                    </a>
+                    </div>
                     <div className="nav-desktop">
-                        <Link to="/Nosotras" className="menu-link">Nosotras</Link>
-                        <Link to="/The Bridge" className="menu-link">The Bridge</Link>
+                        <Link to="/Dashboard" className="menu-link"><span className="menu-highlight">Dashboard</span></Link>
+                        <Link to="/Nosotras" className="menu-link"><span className="menu-highlight">Nosotras</span></Link>
+                        <Link to="/The Bridge" className="menu-link"><span className="menu-highlight">The Bridge</span></Link>
                     </div>
                     <div className="nav-tablet">
                         <MobileMenu />
