@@ -13,90 +13,26 @@ const arraydePrueba = {
 }
 
 function PieChart() {
-  const [year, setYear] = useState("");
-  const [firstCountry, setFirstCountry] = useState("");
-  const [secondCountry, setSecondCountry] = useState("");
-  const [dataFirstChart, setDataFirstChart] = useState()
-  const [dataSecondChart, setDataSecondChart] = useState()
-  const [name, setName] = useState()
+  const [year, setYear] = useState("2009");
+  const [firstCountry, setFirstCountry] = useState("ES");
+  const [secondCountry, setSecondCountry] = useState("ES");
+  const [dataFirstChart, setDataFirstChart] = useState(null)
+  const [dataSecondChart, setDataSecondChart] = useState(null)
+  const [name, setName] = useState("")
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     axios.get(` https://tecnologia-sustantivo-femenino.herokuapp.com/edu/${firstCountry}/${year}`)
       .then(res => {
-        setName(res.name)
-        if (year === 2009) {
-          setDataFirstChart([res.data.female[0], res.data.male[0]])
-        }
-        if (year === 2010) {
-          setDataFirstChart([res.data.female[1], res.data.male[1]])
-        }
-        if (year === 2011) {
-          setDataFirstChart([res.data.female[2], res.data.male[2]])
-        }
-        if (year === 2012) {
-          setDataFirstChart([res.data.female[3], res.data.male[3]])
-        }
-        if (year === 2013) {
-          setDataFirstChart([res.data.female[4], res.data.male[4]])
-        }
-        if (year === 2014) {
-          setDataFirstChart([res.data.female[5], res.data.male[5]])
-        }
-        if (year === 2015) {
-          setDataFirstChart([res.data.female[6], res.data.male[6]])
-        }
-        if (year === 2016) {
-          setDataFirstChart([res.data.female[7], res.data.male[7]])
-        }
-        if (year === 2017) {
-          setDataFirstChart([res.data.female[8], res.data.male[8]])
-        }
-        if (year === 2018) {
-          setDataFirstChart([res.data.female[9], res.data.male[9]])
-        }
-        if (year === 2019) {
-          setDataFirstChart([res.data.female[10], res.data.male[10]])
-        }
+        console.log([res.data.data.female, res.data.data.male])
+        setName(res.data.name)
+        setDataFirstChart([res.data.data.female, res.data.data.male])
       })
 
     axios.get(`https://tecnologia-sustantivo-femenino.herokuapp.com/edu/${secondCountry}/${year}`)
       .then(res => {
-        setName(res.name)
-        if (year === 2009) {
-          setDataSecondChart([res.data.female[0], res.data.male[0]])
-        }
-        if (year === 2010) {
-          setDataSecondChart([res.data.female[1], res.data.male[1]])
-        }
-        if (year === 2011) {
-          setDataSecondChart([res.data.female[2], res.data.male[2]])
-        }
-        if (year === 2012) {
-          setDataSecondChart([res.data.female[3], res.data.male[3]])
-        }
-        if (year === 2013) {
-          setDataSecondChart([res.data.female[4], res.data.male[4]])
-        }
-        if (year === 2014) {
-          setDataSecondChart([res.data.female[5], res.data.male[5]])
-        }
-        if (year === 2015) {
-          setDataSecondChart([res.data.female[6], res.data.male[6]])
-        }
-        if (year === 2016) {
-          setDataSecondChart([res.data.female[7], res.data.male[7]])
-        }
-        if (year === 2017) {
-          setDataSecondChart([res.data.female[8], res.data.male[8]])
-        }
-        if (year === 2018) {
-          setDataSecondChart([res.data.female[9], res.data.male[9]])
-        }
-        if (year === 2019) {
-          setDataSecondChart([res.data.female[10], res.data.male[10]])
-        }
+        setName(res.data.name)
+        setDataSecondChart([res.data.data.female, res.data.data.male])
       })
   }
 
@@ -146,7 +82,6 @@ function PieChart() {
         options={{
           title: {
             display: true,
-            text: name,
             fontSize: 20,
           },
           legend: {
