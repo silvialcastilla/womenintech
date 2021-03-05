@@ -23,7 +23,7 @@ function PieChart() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios.get(`apideclara/?${year}/?${firstCountry}`)
+    axios.get(` https://tecnologia-sustantivo-femenino.herokuapp.com/edu/${firstCountry}/${year}`)
       .then(res => {
         setName(res.name)
         if (year === 2009) {
@@ -61,7 +61,7 @@ function PieChart() {
         }
       })
 
-    axios.get(`apideclara/?${year}/?${secondCountry}`)
+    axios.get(`https://tecnologia-sustantivo-femenino.herokuapp.com/edu/${secondCountry}/${year}`)
       .then(res => {
         setName(res.name)
         if (year === 2009) {

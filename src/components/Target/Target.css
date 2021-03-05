@@ -1,0 +1,19 @@
+.target{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.target-little-container {    
+    position: absolute;
+    width: 255px;
+    height: 360px;
+    
+    /* White/100% */
+    background: #FFFFFF;
+    
+    /* Black/200 */
+    border: 2px solid #EAEDEE;
+    border-radius: 12px;
+}
