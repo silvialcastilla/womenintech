@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import routes from "./config/routes";
 import Bars from './components/Bars.js'
 
-
+import "./App.css";
 
 function App() {
   return (

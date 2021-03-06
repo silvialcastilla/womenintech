@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+* {
+  font-family: "Inter", sans-serif;
+  color: #22172b;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@media (max-width: 768px) {
+  .home-page {
+    margin-left: 60px;
+    width: 75%;
+  }
+  .about-page {
+    margin-left: 60px;
+  }
+  .target-little-container {
+    margin-left: 150px;
+  }
+  .home-page-general-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0;
+  }
+  .our-data {
+    margin-top: 130px;
+    margin-bottom: 20px;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .home-page-div-left {
+    margin-top: 20px;
+    width: 80%;
+  }
+  .home-page-div-right {
+    margin-top: 150px;
+    width: 80%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+canvas {
+  position: relative;
+  margin-top: 20px;
+  right: 170px;
+  width: 150px;
+  height: 150px;
 }
 
-.App-link {
-  color: #61dafb;
+canvas:nth-child(3n) {
+  right: 500px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  background-image: url("./assets/img/8M.png");
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 42px;
+  margin-bottom: 4px;
+}
+
+p {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: -0.523077px;
+  color: #22172b;
+}
+
+.titles-left {
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 1.75px;
+  text-align: left;
+  text-transform: uppercase;
+}
+.titles-right {
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 1.75px;
+  text-align: left;
+  text-transform: uppercase;
 }
