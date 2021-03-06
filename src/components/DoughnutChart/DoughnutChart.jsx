@@ -11,6 +11,7 @@ function DoughnutChart() {
   const [dataFirstChart, setDataFirstChart] = useState(null);
   const [dataSecondChart, setDataSecondChart] = useState(null);
   const [firstPercentage, setFirstPercentage] = useState(null);
+  const [secondPercentage, setSecondPercentage] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -28,6 +29,7 @@ function DoughnutChart() {
         `https://tecnologia-sustantivo-femenino.herokuapp.com/edu/${secondCountry}/${year}`
       )
       .then((res) => {
+        setSecondPercentage(res.data.data.female);
         setDataSecondChart([res.data.data.female, res.data.data.male]);
       });
   };
@@ -169,6 +171,7 @@ function DoughnutChart() {
             },
           }}
         />
+        <p className="second-percentage">{secondPercentage}%</p>
         <Doughnut
           data={secondDoughnut}
           options={{

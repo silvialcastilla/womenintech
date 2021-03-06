@@ -6,12 +6,36 @@
 h3 {
   font-family: "Inter", sans-serif;
   font-size: 42px;
-  margin-left: 150px;
   margin-bottom: 4px;
 }
 
 p {
-  margin: 0;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
   font-size: 16px;
-  margin-left: 150px;
+  line-height: 26px;
+  letter-spacing: -0.523077px;
+  color: #22172b;
+}
+
+.titles-left {
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 1.75px;
+  text-align: left;
+  text-transform: uppercase;
+}
+.titles-right {
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 1.75px;
+  text-align: left;
+  text-transform: uppercase;
 }

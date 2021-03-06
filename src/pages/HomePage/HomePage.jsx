@@ -28,8 +28,10 @@ function HomePage() {
         <h3>Nuestros datos</h3>
         <div className="home-page-general-div">
           <Doughnut />
-          <div>
-            <p>mujeres cursando educación secundaria o superior</p>
+          <div className="home-page-div-left">
+            <p className="titles-left">
+              mujeres cursando educación secundaria o superior
+            </p>
             <p>
               En este gráfico os mostramos una comparativa del porcentaje de
               mujeres cursando educación secundaria o superior con respecto al
@@ -39,9 +41,9 @@ function HomePage() {
             <p>Todos los datos se han obtenido de Eurostat.</p>
           </div>
         </div>
-        <div>
-          <div>
-            <p>relación educación y empleos tic</p>
+        <div className="home-page-general-div">
+          <div className="home-page-div-right">
+            <p className="titles-right">relación educación y empleos tic</p>
             <p>
               En este gráfico os mostramos una comparativa del porcentaje de
               mujeres cursando educación secundaria o superior con respecto al
@@ -50,10 +52,14 @@ function HomePage() {
             </p>
             <p>Todos los datos se han obtenido de Eurostat.</p>
           </div>
+          <div className="lines-chart" />
         </div>
-        <div>
-          <div>
-            <p>relación puestos de responsabilidad y desarrollo del país</p>
+        <div className="home-page-general-div">
+          <div className="lines-chart-left" />
+          <div className="home-page-div-left">
+            <p className="titles-left">
+              relación puestos de responsabilidad y desarrollo del país
+            </p>
             <p>
               En este gráfico os mostramos una comparativa del porcentaje de
               mujeres con un empleo en puesto de responsabilidad con respecto al
@@ -62,9 +68,11 @@ function HomePage() {
             <p>Todos los datos se han obtenido de Eurostat.</p>
           </div>
         </div>
-        <div>
-          <div>
-            <p>Relación empleos tIc con el pib del país</p>
+        <div className="home-page-general-div">
+          <div className="home-page-div-right">
+            <p className="titles-right">
+              Relación empleos tIc con el pib del país
+            </p>
             <p>
               En este gráfico os mostramos una comparativa del porcentaje de
               mujeres con un empleo TIC con respecto al PIB o desarrollo
@@ -72,6 +80,7 @@ function HomePage() {
             </p>
             <p>Todos los datos se han obtenido de Eurostat.</p>
           </div>
+          <div className="lines-chart" />
         </div>
       </div>
     </div>

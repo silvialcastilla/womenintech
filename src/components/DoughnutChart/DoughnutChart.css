@@ -55,6 +55,5 @@ canvas {
 }
 .doughnut-div {
   display: flex;
-
   flex-direction: row;
 }
