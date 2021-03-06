@@ -1,5 +1,5 @@
 import HomePage from '../pages/HomePage/HomePage'
-import LoginPage from '../pages/LoginPage/LoginPage'
+import AboutUsPage from '../pages/AboutUsPage/AboutUsPage'
 
 const routes = [
     {
@@ -8,8 +8,8 @@ const routes = [
       exact: true,
     },
     {
-      path: "/login",
-      component: LoginPage,
+      path: "/about-us",
+      component: AboutUsPage,
       exact: false,
     },
   ];
