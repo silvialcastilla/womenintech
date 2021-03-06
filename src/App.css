@@ -2,7 +2,25 @@
   font-family: "Inter", sans-serif;
   color: #22172b;
 }
+
+canvas {
+  position: relative;
+  margin-top: 20px;
+  right: 170px;
+  width: 150px;
+  height: 150px;
+}
+
+canvas:nth-child(3n) {
+  right: 500px;
+}
+
 body {
+  background-image: url("./assets/img/8M.png");
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
 }
 
 h3 {

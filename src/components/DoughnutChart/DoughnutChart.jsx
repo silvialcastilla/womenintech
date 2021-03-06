@@ -158,8 +158,11 @@ function DoughnutChart() {
       <div className="doughnut-div">
         <p className="first-percentage">{firstPercentage}%</p>
         <Doughnut
+          className="ey"
           data={firstDoughnut}
           options={{
+            responsive: true,
+            maintainAspectRatio: true,
             title: {
               display: true,
               text: "País 1",
@@ -175,6 +178,7 @@ function DoughnutChart() {
         <Doughnut
           data={secondDoughnut}
           options={{
+            responsive: true,
             title: {
               display: true,
               text: "País 2",

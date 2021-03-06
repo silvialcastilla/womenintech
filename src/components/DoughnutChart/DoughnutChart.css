@@ -2,7 +2,7 @@
   background-color: #66149c;
   border-radius: 12px;
   width: 512px;
-  height: 313px;
+  height: 340px;
   border-radius: 12px;
 }
 
@@ -43,14 +43,19 @@ option {
   border-radius: 12px;
 }
 
-canvas {
-  width: 150px;
-  height: 150px;
-}
-
 .first-percentage {
   position: relative;
-  color: black;
+  left: 110px;
+  top: 115px;
+  color: white;
+  margin: 0;
+}
+
+.second-percentage {
+  position: relative;
+  right: 220px;
+  top: 115px;
+  color: white;
   margin: 0;
 }
 .doughnut-div {
