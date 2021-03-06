@@ -1,5 +1,20 @@
+@media (max-width: 768px) {
+  .home-page-general-div {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .our-data {
+    margin-top: 80px;
+  }
+  .home-page-div-left {
+  }
+  .home-page-div-right {
+    margin-left: 60px;
+  }
+}
 .home-page {
-  margin-left: 150px;
+  margin-left: 100px;
 }
 .rectang {
   position: absolute;
@@ -68,4 +83,5 @@
   height: 394px;
   width: 660px;
   border-radius: 12px;
+  display: block;
 }

@@ -6,6 +6,10 @@
   border-radius: 12px;
 }
 
+.form {
+  width: 512px;
+}
+
 select {
   background-color: #66149c;
   color: white;

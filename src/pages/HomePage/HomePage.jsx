@@ -26,7 +26,7 @@ function HomePage() {
       </div>
       <div>
         <div className="rectangu"></div>
-        <h3>Nuestros datos</h3>
+        <h3 className="our-data">Nuestros datos</h3>
         <div className="home-page-general-div">
           <Doughnut />
           <div className="home-page-div-left">

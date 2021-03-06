@@ -60,7 +60,7 @@ function DoughnutChart() {
 
   return (
     <div className="doughnut">
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <select onChange={(event) => setYear(event.target.value)}>
           <option value="2009">Año</option>
           <option value="2009">2009</option>
