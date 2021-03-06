@@ -1,13 +1,16 @@
-import React from "react";
+import React from "react"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import routes from "./config/routes";
+import routes from "./config/routes"
 import './App.css'
+import NavBar from './components/NavBar'
+
 
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <NavBar />
         <Switch>
           {routes.map((route, index) => {
             return (

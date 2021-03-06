@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+ 
+ .nav{
+        width: 100%;
+    }
+        
+   .nav-desktop{
+        display: flex;
+        width: 50%;
+        justify-content: space-between;
+        margin: 0;
+    }
+
+    .logo-the-bridge{
+        position: absolute;
+        left: 36px;
+    }
+    .container{
+        margin: 0px;
+    }
+
+    .menu-link{
+        position: relative;
+        z-index: 1;
+        color: #10182B;
+        text-decoration: none;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        cursor: pointer;
+    }
+    .menu-link:hover{
+        font-weight: 600;
+    }
+    .menu-link:active{
+        font-weight: 600;
+    }
+    .menu-link::before{
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            transform: scale(0);
+            left: 0;
+            background-color: transparent;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+            height: 9px;
+            bottom: 2px;
+            background-color: transparent;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+    .menu-link:hover::before{
+        background-color: rgba(140, 5, 130, 0.3);
+        transform: scalex(0.8) translate(19px, 0px);
+        transform-origin: bottom center;
+        transition: transform 0.25s ease-out;
+    }
+    
+    .active::before{
+        background-color: rgba(140, 5, 130, 0.3);
+        transform: scalex(0.8) translate(19px, 0px);
+        transform-origin: bottom center;
+        transition: transform 0.25s ease-out;
+    }
+
+    .active{
+        font-weight: 600;
+    }
+    
+    .logo-the-bridge > img{
+        width: 36px;
+    }
+
+    .nav-tablet{
+        display: none;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .menu-link{
+            color: #10182B;
+            text-decoration: none;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 26px;
+        }
+        .nav-tablet{
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            margin-right: 20px;
+        }
+        .nav-desktop{
+            display: none;
+        }
+      }
+ 
+    @media only screen and (max-width: 360px) {
+      }
