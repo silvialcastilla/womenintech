@@ -12,6 +12,7 @@ function DoughnutChart() {
   const [dataSecondChart, setDataSecondChart] = useState(null);
   const [firstPercentage, setFirstPercentage] = useState(null);
   const [secondPercentage, setSecondPercentage] = useState(null);
+  const [data, setData] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,6 +32,7 @@ function DoughnutChart() {
       .then((res) => {
         setSecondPercentage(res.data.data.female);
         setDataSecondChart([res.data.data.female, res.data.data.male]);
+        setData(true);
       });
   };
 
@@ -155,42 +157,46 @@ function DoughnutChart() {
         </select>
         <input type="submit" className="doughnut-button" value="Representar" />
       </form>
-      <div className="doughnut-div">
-        <p className="first-percentage">{firstPercentage}%</p>
-        <Doughnut
-          className="ey"
-          data={firstDoughnut}
-          options={{
-            responsive: true,
-            maintainAspectRatio: true,
-            title: {
-              display: true,
-              text: "País 1",
-              fontSize: 20,
-              position: "bottom",
-            },
-            legend: {
-              display: false,
-            },
-          }}
-        />
-        <p className="second-percentage">{secondPercentage}%</p>
-        <Doughnut
-          data={secondDoughnut}
-          options={{
-            responsive: true,
-            title: {
-              display: true,
-              text: "País 2",
-              fontSize: 20,
-              position: "bottom",
-            },
-            legend: {
-              display: false,
-            },
-          }}
-        />
-      </div>
+      {data ? (
+        <div className="doughnut-div">
+          <p className="first-percentage">{firstPercentage}%</p>
+          <Doughnut
+            className="ey"
+            data={firstDoughnut}
+            options={{
+              responsive: true,
+              maintainAspectRatio: true,
+              title: {
+                display: true,
+                text: firstCountry,
+                fontSize: 20,
+                position: "bottom",
+              },
+              legend: {
+                display: false,
+              },
+            }}
+          />
+          <p className="second-percentage">{secondPercentage}%</p>
+          <Doughnut
+            data={secondDoughnut}
+            options={{
+              responsive: true,
+              title: {
+                display: true,
+                text: secondCountry,
+                fontSize: 20,
+                position: "bottom",
+              },
+              legend: {
+                display: false,
+              },
+            }}
+          />
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }
