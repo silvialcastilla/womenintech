@@ -69,7 +69,7 @@ export default function NavBar(props) {
                     </div>
                     <div className="nav-desktop">
                         <Link to="/Dashboard" className={`menu-link ${activeOne && 'active'}`} onClick={()=> handleClick(1)}><span className="menu-highlight">Dashboard</span></Link>
-                        <Link to="/Nosotras" className={`menu-link ${activeTwo && 'active'}`} onClick={()=> handleClick(2)}><span className="menu-highlight">Nosotras</span></Link>
+                        <Link to="/nosotras" className={`menu-link ${activeTwo && 'active'}`} onClick={()=> handleClick(2)}><span className="menu-highlight">Nosotras</span></Link>
                         <a href="https://thebridge.tech/" target="_blank" className="menu-link"><span className="menu-highlight">The Bridge</span></a>
                     </div>
                     <div className="nav-tablet">

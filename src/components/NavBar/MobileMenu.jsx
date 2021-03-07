@@ -62,8 +62,8 @@ export default function TemporaryDrawer(props) {
       <List style={styles.list}>
         <CloseIcon style={styles.closeIcon} onClick={toggleDrawer('right', false)}/>
         {[
-          {text:'Dashboard', url:'/Dashboard'}, 
-          {text:'Nosotras', url:'/Nosotras'}, 
+          {text:'Dashboard', url:'/'}, 
+          {text:'Nosotras', url:'/nosotras'}, 
           {text: 'The Bridge', url:'https://thebridge.tech/'}
         ].map((item, index) => (
             <a href={item.url} style={styles.link} key={index} target={item.text === 'The Bridge' ? '_blank': ''}>
