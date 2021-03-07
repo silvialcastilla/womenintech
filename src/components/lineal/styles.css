@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.chart-title{
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.653846px;
+  color: #10182B;
+  margin: 0px 0px 25px 0px;
+
+}
+.chart-leyend{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 16px 0px 0px 50px;
+}
+
+.leyend{
+  display: flex;
+  align-items: center;
+}
+.leyend-title{
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: -0.392308px;
+  color: #96999C;
+  margin: 4px 0px;
+}
+
+.leyend-circle-one, .leyend-circle-two{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.leyend-circle-one{
+  background-color: #8C0582;
+}
+
+.leyend-circle-two{
+  background-color: #00CFFF;
+}

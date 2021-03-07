@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import Doughnut from "../../components/DoughnutChart/DoughnutChart";
 import back from "../../assets/img/8M.png";
@@ -84,6 +85,19 @@ function HomePage() {
           <div className="lines-chart" />
         </div>
       </div>
+=======
+import React from 'react'
+import Lineal from '../../components/lineal'
+import Container from '../../components/container'
+
+
+
+function ArchivePage() {
+  return (
+    <div className="archive-page">
+      <h1>Educación vs empleos TIC</h1>
+      <Container component={Lineal} />
+>>>>>>> a20f3662242f79054365006a88dc4c8c48852ac5
     </div>
   );
 }

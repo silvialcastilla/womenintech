@@ -1,9 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import routes from "./config/routes";
-import Bars from './components/Bars.js'
+import './App.css'
 
-import "./App.css";
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
           })}
         </Switch>
       </Router>
-          <Bars></Bars>
     </div>
   );
 }
