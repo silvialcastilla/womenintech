@@ -14,7 +14,7 @@ export const countriesByCode = [
     {name: 'Estonia', code: 'EE'},
     {name: 'Finlandia', code: 'FI'},
     {name: 'Francia', code: 'FR'},
-    {name: 'Grecia', code: 'IE'},
+    {name: 'Grecia', code: 'EL'},
     {name: 'Hungría', code: 'HU'},
     {name: 'Irlanda', code: 'IE'},
     {name: 'Islandia', code: 'IS'},

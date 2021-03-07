@@ -1,0 +1,16 @@
+.line-select {
+    background-color: transparent;
+    color: #96999C;
+    margin: 0;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 0;
+    width: 125px;
+    outline: none;
+}
+
+.line-option {
+    background-color: transparent;
+    color: #96999C;
+    margin-right: 60.04px;
+  }

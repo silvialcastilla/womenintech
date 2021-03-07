@@ -12,9 +12,40 @@
   .home-page-div-right {
     margin-left: 60px;
   }
+  .home-page {
+    margin: 75px 60px 75px 60px;
+    width: 75%;
+  }
+  .about-page {
+    margin-left: 60px;
+  }
+  .target-little-container {
+    margin-left: 150px;
+  }
+  .home-page-general-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0;
+  }
+  .our-data {
+    margin-top: 130px;
+    margin-bottom: 20px;
+  }
+
+  /* .home-page-div-left {
+    margin-top: 20px;
+    width: 80%;
+  }
+  .home-page-div-right {
+    margin-top: 150px;
+    width: 80%;
+  } */
 }
 .home-page {
-  margin-left: 100px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 150px;
 }
 .rectang {
   position: absolute;

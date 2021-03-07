@@ -1,6 +1,6 @@
 import React from "react";
 import Doughnut from "../../components/DoughnutChart/DoughnutChart";
-import Lineal from '../../components/lineal/index';
+import MultiLine from '../../components/MultiLine/index';
 import back from "../../assets/img/8M.png";
 import "./HomePage.css";
 import Container from '../../components/container'
@@ -55,10 +55,11 @@ function HomePage() {
             </p>
             <p>Todos los datos se han obtenido de Eurostat.</p>
           </div>
-          <Container component={Lineal}/>
+          <Container component={MultiLine}/>
         </div>
         <div className="home-page-general-div">
-          <div className="lines-chart-left" />
+          <Container component={MultiLine}/>
+          {/* <div className="lines-chart-left" /> */}
           <div className="home-page-div-left">
             <p className="titles-left">
               relación puestos de responsabilidad y desarrollo del país
@@ -83,7 +84,8 @@ function HomePage() {
             </p>
             <p>Todos los datos se han obtenido de Eurostat.</p>
           </div>
-          <div className="lines-chart" />
+          {/* <div className="lines-chart" /> */}
+          <Container component={MultiLine}/>
         </div>
       </div>
     </div>

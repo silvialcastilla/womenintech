@@ -7,7 +7,15 @@ canvas{
 .chart-container{
   position: relative;
 }
-
+.chart-container > div.chartjs-size-monitor > canvas.chartjs-render-monitor{
+  position: initial ! important;
+}
+.line-chart-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 0px 25px 0px;
+}
 .chart-title{
   font-family: Inter;
   font-style: normal;
@@ -15,21 +23,20 @@ canvas{
   font-size: 20px;
   letter-spacing: -0.653846px;
   color: #10182B;
-  margin: 0px 0px 25px 0px;
 
 }
-.chart-leyend{
+.chart-legend{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin: 16px 0px 0px 50px;
 }
 
-.leyend{
+.legend{
   display: flex;
   align-items: center;
 }
-.leyend-title{
+.legend-title{
   font-family: Inter;
   font-style: normal;
   font-weight: 500;
@@ -39,17 +46,17 @@ canvas{
   margin: 4px 0px;
 }
 
-.leyend-circle-one, .leyend-circle-two{
+.legend-circle-one, .legend-circle-two{
   width: 8px;
   height: 8px;
   border-radius: 50%;
   margin: 5px;
 }
 
-.leyend-circle-one{
+.legend-circle-one{
   background-color: #8C0582;
 }
 
-.leyend-circle-two{
+.legend-circle-two{
   background-color: #00CFFF;
 }

@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import { getEduWomanData } from "../../utils/data";
+import Select from '../Select/Select'
+import Button from '../Button/Button'
 import "./styles.css";
 
 const dataFromFetch = [
   {
     label: "Mujeres en educación secundaria o superior",
     yAxisID: "Mujeres en educación secundaria o superior",
-    data: [51, 51, 51, 52, 52, 51, 52, 52, 52, 52, 100],
+    data: [51, 51, 51, 52, 52, 51, 52, 52, 52, 52, 53],
     fill: false,
     borderColor: "#8C0582",
     backgroundColor: "transparent",
@@ -16,8 +18,9 @@ const dataFromFetch = [
     borderDash: [],
     borderDashOffset: 10,
     borderJoinStyle: "miter",
-    pointRadius: 0,
-    pointHitRadius: 0,
+    pointRadius: 1,
+    pointBorderColor: 'transparent',
+    pointBackgroundColor: '#8C0582',
   },
   {
     label: "Mujeres trabajando en empleos TIC",
@@ -31,8 +34,9 @@ const dataFromFetch = [
     borderDash: [],
     borderDashOffset: 10,
     borderJoinStyle: "miter",
-    pointRadius: 0,
-    pointHitRadius: 0,
+    pointRadius: 1,
+    pointBorderColor: 'transparent',
+    pointBackgroundColor: '#00CFFF',
   },
 ];
 const womenStudies = {
@@ -81,9 +85,8 @@ const finalData = {
 const lineOptions = {
   maintainAspectRatio: true,
   responsive: true,
-  onResize: function(){
-    console.log("onResize")
-
+  onResize: function () {
+    console.log("onResize");
   },
   title: {
     display: false,
@@ -100,11 +103,21 @@ const lineOptions = {
     align: "start",
   },
   scales: {
+    xAxes: [
+      {
+        ticks: {
+          padding: 20,
+        },
+      },
+    ],
     yAxes: [
       {
         id: "Mujeres en educación secundaria o superior",
         type: "linear",
         position: "left",
+        ticks: {
+          padding: 20,
+        },
       },
       {
         id: "Mujeres trabajando en empleos TIC",
@@ -115,31 +128,31 @@ const lineOptions = {
           max: 100,
           beginAtZero: true,
           callback: function (value) {
-            return value + "%";
+            return value + "M";
           },
+          padding: 20,
         },
         scaleLabel: {
           display: true,
-          labelString: "Percentage",
         },
       },
     ],
   },
   layout: {
     padding: {
-        left: 0,
-        right: 0,
-        top: 0,
-        bottom: 0
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
     },
-    position: 'none'
-  }
+    position: "none",
+  },
 };
 
-export default function App() {
-  const [country, setCoutry] = useState("");
+export default function MultiLine() {
   const [data, setData] = useState(finalData);
   const [selectedData, setSelectedData] = useState(dataFromFetch);
+  const [country, setCountry] = useState('')
 
   useEffect(async () => {
     const eduWomanData = await getEduWomanData("ES");
@@ -147,38 +160,41 @@ export default function App() {
     console.log("data eduwoman", finalData);
   }, []);
 
-  const handleClick = (option) => {
-    let dataToShow = [];
-    if (option === 1) {
-      dataToShow.push(dataFromFetch[0]);
-    }
-    if (option === 2) {
-      dataToShow.push(dataFromFetch[1]);
-    }
-    if (option === 3) {
-      dataToShow = dataFromFetch;
-    }
-    setSelectedData(dataToShow);
+  useEffect(() => {
+    console.log("opcion seleccionada", country)
+  }, [country])
+
+  const handleChange = (country) => {
+    setCountry(country)
+    console.log("valor que llega a MultiLine", country)
   };
+
+  const handleClick = () =>{
+    console.log('click')
+  }
   return (
     <div className="lineal">
-      <h2 className="chart-title">Educación vs empleos TIC</h2>
+      <div className="line-chart-header">
+        <h2 className="chart-title">Educación vs empleos TIC</h2>
+        <Select type={'country'} getValue={handleChange} value={country}/>
+        <Button click={()=>handleClick}/>
+      </div>
       <div className="chart-container">
         <Line data={finalData} width={100} height={50} options={lineOptions} />
       </div>
-      <div className="chart-leyend">
-        <div className="leyend">
-          <div className="leyend-circle-one"></div>
-          <p className="leyend-title">
+      <div className="chart-legend">
+        <div className="legend">
+          <div className="legend-circle-one"></div>
+          <p className="legend-title">
             Mujeres en educación secundaria o superior
           </p>
         </div>
-        <div className="leyend">
-          <div className="leyend-circle-two"></div>
-          <p className="leyend-title">Mujeres trabajando en empleos TIC</p>
+        <div className="legend">
+          <div className="legend-circle-two"></div>
+          <p className="legend-title">Mujeres trabajando en empleos TIC</p>
         </div>
       </div>
-      <button onClick={() => handleClick(1)} className="first-data">
+      {/* <button onClick={() => handleClick(1)} className="first-data">
         First Dataset
       </button>
       <button onClick={() => handleClick(2)} className="second-data">
@@ -186,7 +202,7 @@ export default function App() {
       </button>
       <button onClick={() => handleClick(3)} className="all-data">
         All Datasets
-      </button>
+      </button> */}
     </div>
   );
 }
