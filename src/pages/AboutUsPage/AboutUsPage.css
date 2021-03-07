@@ -1,9 +1,13 @@
+.about-page {
+  margin: 112px 150px 75px 150px;
+  padding-bottom: 120px;
+  overflow: hidden;
+}
 .aboutUsPage-container {
   display: flex;
   flex-wrap: wrap;
-}
-.about-page {
-  margin-left: 100px;
+  justify-content: space-between;
+  margin-top: 32px;
 }
 
 .rectangul {
@@ -15,4 +19,21 @@
   margin-left: 147px;
   background: rgba(140, 5, 130, 0.3);
   opacity: 0.5;
+}
+
+@media only screen and (max-width: 1400px) {
+  .about-page {
+    margin: 112px 60px 75px 60px;
+    padding-bottom: 120px;
+    overflow: hidden;
+  }
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .aboutUsPage-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 }
