@@ -26,8 +26,24 @@ select {
 
 option {
   background-color: #66149c;
-  color: white;
   margin-right: 60.04px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height, or 150% */
+  
+  text-align: center;
+  letter-spacing: -0.457692px;
+  
+  /* White/100% */
+  
+  color: red;
+}
+
+#year-option{
+  margin-right: 40px;
 }
 
 /* .doughnut-button {
@@ -60,18 +76,24 @@ option {
 
 .first-percentage {
   position: absolute;
-  top: 78px;
-  left: 110px;
+  top: 27px;
+  left: 127px;
   color: #FFFAFE;
   margin: 0;
+  width: 200px;
 }
 
 .second-percentage {
   position: relative;
-  right: 220px;
-  top: 115px;
-  color: #FFFAFE;
   margin: 0;
+  right: -18px;
+  top: 27px;
+  color: #FFFAFE;
+  width: 200px;
+  place-items: baseline;
+}
+.percentage-container{
+  width: 200px;
 }
 .doughnut-div {
   display: flex;
@@ -79,6 +101,23 @@ option {
   position: relative;
   /* justify-content: center; */
 }
+.doughnut-div > canvas:nth-child(2n) {
+  position: relative;
+  left: -303px;
+  top: -12px;
+  height: 150px !important;
+}
+.doughnut-div > canvas:nth-child(4n) {
+  position: relative;
+  left: 8px;
+  top: -12px;
+  height: 150px !important;
+}
+
+/* .chartjs-render-monitor{
+  position: relative;
+  left: -114px;
+} */
 
 @media only screen and (max-width: 1400px) {
 .doughnut{

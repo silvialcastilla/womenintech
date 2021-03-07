@@ -16,7 +16,7 @@ function AboutUsPage() {
     {
       name: "Clara",
       profession: "Data Scientist",
-      description: "lorem",
+      description: "En un mundo que cada vez cambia más rápido, no tener miedo a ese cambio y reconocerlo como un empuje para seguir mejorando como persona y como profesional para así devolverle a ese mundo todo lo que nos da",
       img: Clara,
     },
     {

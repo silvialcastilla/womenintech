@@ -70,6 +70,7 @@ function DoughnutChart() {
   return (
     <div className="doughnut">
       <form className="form" >
+        <div className="select-container">
         <select onChange={(event) => setYear(event.target.value)}>
           <option value="2009">Año</option>
           <option value="2009">2009</option>
@@ -82,7 +83,7 @@ function DoughnutChart() {
           <option value="2016">2016</option>
           <option value="2017">2017</option>
           <option value="2018">2018</option>
-          <option value="2019">2019</option>
+          <option value="2019" selected>2019</option>
         </select>
 
         <select
@@ -93,41 +94,41 @@ function DoughnutChart() {
           }}
         >          
           <option value="EU27_2020">País 1</option>
-          <option value="EU27_2020">Unión Europea</option>
+          <option value="EU27_2020" selected>UE</option>
+          <option value="DE">Alemania</option>
+          <option value="AT">Austria</option>
           <option value="BE">Bélgica</option>
           <option value="BG">Bulgaria</option>
           <option value="CZ">Chequia</option>
-          <option value="DK">Dinamarca</option>
-          <option value="DE">Alemania</option>
-          <option value="EE">Estonia</option>
-          <option value="IE">Irlanda</option>
-          <option value="EL">Grecia</option>
-          <option value="ES">España</option>
-          <option value="FR">Francia</option>
-          <option value="HR">Croacia</option>
-          <option value="IT">Italia</option>
           <option value="CY">Chipre</option>
+          <option value="HR">Croacia</option>
+          <option value="DK">Dinamarca</option>
+          <option value="SK">Eslovaquia</option>
+          <option value="SI">Eslovenia</option>
+          <option value="ES">España</option>
+          <option value="EE">Estonia</option>
+          <option value="FI">Finlandia</option>
+          <option value="FR">Francia</option>
+          <option value="EL">Grecia</option>
+          <option value="HU">Hungria</option>
+          <option value="IE">Irlanda</option>
+          <option value="IS">Islandia</option>
+          <option value="IT">Italia</option>
           <option value="LV">Letonia</option>
           <option value="LT">Lituania</option>
           <option value="LU">Luxemburgo</option>
-          <option value="HU">Hungria</option>
+          <option value="MK">Macedonia</option>
           <option value="MT">Malta</option>
+          <option value="ME">Montenegro</option>
+          <option value="NO">Noruega</option>
           <option value="NL">Países Bajos</option>
-          <option value="AT">Australia</option>
           <option value="PL">Polonia</option>
           <option value="PT">Portugal</option>
-          <option value="RO">Rumanía</option>
-          <option value="SI">Eslovenia</option>
-          <option value="SK">Eslovaquia</option>
-          <option value="FI">Finlandia</option>
-          <option value="SE">Suecia</option>
-          <option value="IS">Islandia</option>
-          <option value="NO">Noruega</option>
-          <option value="CH">Suiza</option>
           <option value="UK">Reino Unido</option>
-          <option value="ME">Montenegro</option>
-          <option value="MK">Macedonia</option>
+          <option value="RO">Rumanía</option>
           <option value="RS">Serbia</option>
+          <option value="SE">Suecia</option>
+          <option value="CH">Suiza</option>
           <option value="TR">Turquia</option>
         </select>
 
@@ -139,58 +140,60 @@ function DoughnutChart() {
           }}
         >    
           <option value="EU27_2020">País 2</option>
-          <option value="EU27_2020">Unión Europea</option>
-          <option value="BE">Belgia</option>
+          <option value="EU27_2020" >UE</option>
+          <option value="DE">Alemania</option>
+          <option value="AT">Austria</option>
+          <option value="BE">Bélgica</option>
           <option value="BG">Bulgaria</option>
           <option value="CZ">Chequia</option>
-          <option value="DK">Dinamarca</option>
-          <option value="DE">Alemania</option>
-          <option value="EE">Estonia</option>
-          <option value="IE">Irlanda</option>
-          <option value="EL">Grecia</option>
-          <option value="ES">España</option>
-          <option value="FR">Francia</option>
-          <option value="HR">Croacia</option>
-          <option value="IT">Italia</option>
           <option value="CY">Chipre</option>
+          <option value="HR">Croacia</option>
+          <option value="DK">Dinamarca</option>
+          <option value="SK">Eslovaquia</option>
+          <option value="SI">Eslovenia</option>
+          <option value="ES" selected>España</option>
+          <option value="EE">Estonia</option>
+          <option value="FI">Finlandia</option>
+          <option value="FR">Francia</option>
+          <option value="EL">Grecia</option>
+          <option value="HU">Hungria</option>
+          <option value="IE">Irlanda</option>
+          <option value="IS">Islandia</option>
+          <option value="IT">Italia</option>
           <option value="LV">Letonia</option>
           <option value="LT">Lituania</option>
           <option value="LU">Luxemburgo</option>
-          <option value="HU">Hungria</option>
+          <option value="MK">Macedonia</option>
           <option value="MT">Malta</option>
+          <option value="ME">Montenegro</option>
+          <option value="NO">Noruega</option>
           <option value="NL">Países Bajos</option>
-          <option value="AT">Australia</option>
           <option value="PL">Polonia</option>
           <option value="PT">Portugal</option>
-          <option value="RO">Rumanía</option>
-          <option value="SI">Eslovenia</option>
-          <option value="SK">Eslovaquia</option>
-          <option value="FI">Finlandia</option>
-          <option value="SE">Suecia</option>
-          <option value="IS">Islandia</option>
-          <option value="NO">Noruega</option>
-          <option value="CH">Suiza</option>
           <option value="UK">Reino Unido</option>
-          <option value="ME">Montenegro</option>
-          <option value="MK">Macedonia</option>
+          <option value="RO">Rumanía</option>
           <option value="RS">Serbia</option>
+          <option value="SE">Suecia</option>
+          <option value="CH">Suiza</option>
           <option value="TR">Turquia</option>
         </select>      
+      </div>
         <Button click={handleClick}/>
-        {/* <input type="submit" className="doughnut-button" value="Representar" /> */}
       </form>
       <div className="doughnut-div">
-        <p className="first-percentage"><span className="number-percentage">{`${firstPercentage.slice(0,2)} `}</span>%</p>
+          <div className="percentage-container">
+            <p className="first-percentage"><span className="number-percentage">{`${firstPercentage.slice(0,2)}`}</span> %</p>
+          </div>
         <Doughnut
           data={firstDoughnut}
           options={{
-            cutoutPercentage: 70,
+            cutoutPercentage: 80,
             responsive: true,
             weight:1,
             title: {
               display: true,
-              text: titleFirstChart,
-              fontSize: 12,
+              text: firstPercentage === '0' ? `No hay datos registrados durante este año en ${titleFirstChart}` : titleFirstChart,
+              fontize: 12,
               fontColor: '#FFFFFF',
               position: "bottom",
               fontStyle: 'regular',
@@ -201,16 +204,18 @@ function DoughnutChart() {
             },
           }}
         />
-        <p className="second-percentage"><span className="number-percentage">{`${secondPercentage.slice(0,2)} `}</span>%</p>
+        <div className="percentage-container">
+          <p className="second-percentage"><span className="number-percentage">{`${secondPercentage.slice(0,2)}`}</span> %</p>
+        </div>
         <Doughnut
         height={150}
           data={secondDoughnut}
           options={{
             responsive: true,
-            cutoutPercentage: 70,
+            cutoutPercentage: 80,
             title: {
               display: true,
-              text: titleSecondChart,
+              text: secondPercentage === '0' ? `No hay datos registrados durante este año en ${titleSecondChart}` : titleSecondChart,
               fontSize: 12,
               fontColor: '#FFFFFF',
               position: "bottom",
