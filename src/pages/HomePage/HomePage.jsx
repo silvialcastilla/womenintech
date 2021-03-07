@@ -1,6 +1,6 @@
 import React from "react";
 import Doughnut from "../../components/DoughnutChart/DoughnutChart";
-import back from "../../assets/img/8M.png";
+
 import "./HomePage.css";
 
 function HomePage() {
