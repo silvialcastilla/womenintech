@@ -161,7 +161,6 @@ function DoughnutChart() {
         <div className="doughnut-div">
           <p className="first-percentage">{firstPercentage}%</p>
           <Doughnut
-            className="ey"
             data={firstDoughnut}
             options={{
               responsive: true,
