@@ -179,17 +179,8 @@ function DoughnutChart() {
         </select>      
       </div>
         <Button click={handleClick}/>
-        {/* <input type="submit" className="doughnut-button" value="Representar" /> */}
       </form>
-        {/* <p className="first-country">{titleSecondChart}</p> */}
       <div className="doughnut-div">
-        {/* {
-          dataFirstChart[0] === '0' || dataFirstChart[1] === '0' ?
-          <div className="percentage-container">
-            <p className="first-percentage">NO HAY NADA, VIEJO!!!! UN BESO</p>
-          </div>
-        :
-         <> */}
           <div className="percentage-container">
             <p className="first-percentage"><span className="number-percentage">{`${firstPercentage.slice(0,2)}`}</span> %</p>
           </div>
@@ -213,12 +204,9 @@ function DoughnutChart() {
             },
           }}
         />
-        {/* </>
-        } */}
         <div className="percentage-container">
           <p className="second-percentage"><span className="number-percentage">{`${secondPercentage.slice(0,2)}`}</span> %</p>
         </div>
-        {/* <p className="second-country">{titleSecondChart}</p> */}
         <Doughnut
         height={150}
           data={secondDoughnut}
