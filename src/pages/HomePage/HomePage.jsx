@@ -1,7 +1,9 @@
 import React from "react";
 import Doughnut from "../../components/DoughnutChart/DoughnutChart";
+import Lineal from '../../components/lineal/index';
 import back from "../../assets/img/8M.png";
 import "./HomePage.css";
+import Container from '../../components/container'
 
 function HomePage() {
   return (
@@ -53,7 +55,7 @@ function HomePage() {
             </p>
             <p>Todos los datos se han obtenido de Eurostat.</p>
           </div>
-          <div className="lines-chart" />
+          <Container component={Lineal}/>
         </div>
         <div className="home-page-general-div">
           <div className="lines-chart-left" />

@@ -40,8 +40,9 @@ function DoughnutChart() {
     labels: ["Mujeres", "Hombres"],
     datasets: [
       {
-        label: "Rainfall",
+        label: "First Doughnut",
         backgroundColor: ["#FFFAFE", "rgba(255, 255, 255, 0.5)"],
+        borderWidth: 0,
         data: dataFirstChart,
       },
     ],
@@ -51,8 +52,9 @@ function DoughnutChart() {
     labels: ["Mujeres", "Hombres"],
     datasets: [
       {
-        label: "Hello",
+        label: "Second Doughnut",
         backgroundColor: ["#FFFAFE", "rgba(255, 255, 255, 0.5)"],
+        borderWidth: 0,
         data: dataSecondChart,
       },
     ],
@@ -164,8 +166,8 @@ function DoughnutChart() {
             className="ey"
             data={firstDoughnut}
             options={{
+              cutoutPercentage: 70,
               responsive: true,
-              maintainAspectRatio: true,
               title: {
                 display: true,
                 text: firstCountry,
@@ -181,6 +183,7 @@ function DoughnutChart() {
           <Doughnut
             data={secondDoughnut}
             options={{
+              cutoutPercentage: 70,
               responsive: true,
               title: {
                 display: true,

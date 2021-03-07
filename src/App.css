@@ -2,6 +2,9 @@
   font-family: "Inter", sans-serif;
   color: #22172b;
 }
+body{
+  background-color: #FFFAFE;
+}
 
 @media (max-width: 768px) {
   .home-page {
@@ -90,4 +93,13 @@ p {
   letter-spacing: 1.75px;
   text-align: left;
   text-transform: uppercase;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
