@@ -70,6 +70,7 @@ function DoughnutChart() {
   return (
     <div className="doughnut">
       <form className="form" >
+        <div className="select-container">
         <select onChange={(event) => setYear(event.target.value)}>
           <option value="2009">Año</option>
           <option value="2009">2009</option>
@@ -176,21 +177,32 @@ function DoughnutChart() {
           <option value="RS">Serbia</option>
           <option value="TR">Turquia</option>
         </select>      
+      </div>
         <Button click={handleClick}/>
         {/* <input type="submit" className="doughnut-button" value="Representar" /> */}
       </form>
+        {/* <p className="first-country">{titleSecondChart}</p> */}
       <div className="doughnut-div">
-        <p className="first-percentage"><span className="number-percentage">{`${firstPercentage.slice(0,2)} `}</span>%</p>
+        {/* {
+          dataFirstChart[0] === '0' || dataFirstChart[1] === '0' ?
+          <div className="percentage-container">
+            <p className="first-percentage">NO HAY NADA, VIEJO!!!! UN BESO</p>
+          </div>
+        :
+         <> */}
+          <div className="percentage-container">
+            <p className="first-percentage"><span className="number-percentage">{`${firstPercentage.slice(0,2)}`}</span> %</p>
+          </div>
         <Doughnut
           data={firstDoughnut}
           options={{
-            cutoutPercentage: 70,
+            cutoutPercentage: 80,
             responsive: true,
             weight:1,
             title: {
               display: true,
-              text: titleFirstChart,
-              fontSize: 12,
+              text: firstPercentage === '0' ? `No hay datos registrados durante este año en ${titleFirstChart}` : titleFirstChart,
+              fontize: 12,
               fontColor: '#FFFFFF',
               position: "bottom",
               fontStyle: 'regular',
@@ -201,16 +213,21 @@ function DoughnutChart() {
             },
           }}
         />
-        <p className="second-percentage"><span className="number-percentage">{`${secondPercentage.slice(0,2)} `}</span>%</p>
+        {/* </>
+        } */}
+        <div className="percentage-container">
+          <p className="second-percentage"><span className="number-percentage">{`${secondPercentage.slice(0,2)}`}</span> %</p>
+        </div>
+        {/* <p className="second-country">{titleSecondChart}</p> */}
         <Doughnut
         height={150}
           data={secondDoughnut}
           options={{
             responsive: true,
-            cutoutPercentage: 70,
+            cutoutPercentage: 80,
             title: {
               display: true,
-              text: titleSecondChart,
+              text: secondPercentage === '0' ? `No hay datos registrados durante este año en ${titleSecondChart}` : titleSecondChart,
               fontSize: 12,
               fontColor: '#FFFFFF',
               position: "bottom",
