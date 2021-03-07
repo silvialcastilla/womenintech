@@ -47,7 +47,6 @@ const BASE_URL = 'https://tecnologia-sustantivo-femenino.herokuapp.com/'
 // /edu/<country>/<year>  --> https://tecnologia-sustantivo-femenino.herokuapp.com/edu/ES/2010
 // ESTE ES EL DE PIE
 
-
 // /eduwoman/<country> --> https://tecnologia-sustantivo-femenino.herokuapp.com/eduwoman/ES
 // SIMPLE LINE 
 // EDUCACIÓN
