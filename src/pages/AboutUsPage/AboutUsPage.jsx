@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import Target from "../../components/Target/Target";
 import "./AboutUsPage.css";
-import Clara from "../../assets/img/clara.png";
+import Clara from "../../assets/img/clara.jpg";
 import Miriam from "../../assets/img/miriam.png";
-import Nora from "../../assets/img/nora.png";
-import Sol from "../../assets/img/sol.png";
-import Silvia from "../../assets/img/silvia.png";
-import Marina from "../../assets/img/marina.png";
+import Nora from "../../assets/img/nora.jpg";
+import Sol from "../../assets/img/sol.jpg";
+import Silvia from "../../assets/img/silvia.jpg";
+import Marina from "../../assets/img/marina.jpg";
 import Marinaa from "../../assets/img/marinaa.png";
 import Reyes from "../../assets/img/reyes.png";
+import Carmen from "../../assets/img/carmen.jpg";
 
 function AboutUsPage() {
   const [notes, setNotes] = useState([
@@ -62,6 +63,12 @@ function AboutUsPage() {
       profession: "Data Scientist",
       description: "lorem",
       img: Reyes,
+    },
+    {
+      name: "Carmen",
+      profession: "Fullstack Developer",
+      description: "lorem",
+      img: Carmen,
     },
   ]);
   return (

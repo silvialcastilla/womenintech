@@ -6,13 +6,16 @@ import axios from "axios";
 
 function DoughnutChart() {
   const [year, setYear] = useState("2009");
-  const [firstCountry, setFirstCountry] = useState("ES");
+  const [firstCountry, setFirstCountry] = useState("EU27_2020");
   const [secondCountry, setSecondCountry] = useState("ES");
-  const [dataFirstChart, setDataFirstChart] = useState(null);
-  const [dataSecondChart, setDataSecondChart] = useState(null);
-  const [firstPercentage, setFirstPercentage] = useState(null);
-  const [secondPercentage, setSecondPercentage] = useState(null);
-  const [data, setData] = useState(false);
+  const [dataFirstChart, setDataFirstChart] = useState([50.57, 49.43]);
+  const [nameFirstChart, setNameFirstChart] = useState("Unión Europea");
+  const [titleFirstChart, setTitleFirstChart] = useState("Unión Europea");
+  const [dataSecondChart, setDataSecondChart] = useState([52.78, 47.22]);
+  const [nameSecondChart, setNameSecondChart] = useState("España");
+  const [titleSecondChart, setTitleSecondChart] = useState("España");
+  const [firstPercentage, setFirstPercentage] = useState("50.57");
+  const [secondPercentage, setSecondPercentage] = useState("52.78");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,6 +26,7 @@ function DoughnutChart() {
       .then((res) => {
         setFirstPercentage(res.data.data.female);
         setDataFirstChart([res.data.data.female, res.data.data.male]);
+        setTitleFirstChart(nameFirstChart);
       });
 
     axios
@@ -32,7 +36,7 @@ function DoughnutChart() {
       .then((res) => {
         setSecondPercentage(res.data.data.female);
         setDataSecondChart([res.data.data.female, res.data.data.male]);
-        setData(true);
+        setTitleSecondChart(nameSecondChart);
       });
   };
 
@@ -76,10 +80,16 @@ function DoughnutChart() {
           <option value="2019">2019</option>
         </select>
 
-        <select onChange={(event) => setFirstCountry(event.target.value)}>
+        <select
+          onChange={(event) => {
+            let valor = event.target.selectedIndex;
+            setFirstCountry(event.target.value);
+            setNameFirstChart(event.target.options[valor].text);
+          }}
+        >
           <option value="EU27_2020">País 1</option>
           <option value="EU27_2020">Unión Europea</option>
-          <option value="BE">Belgia</option>
+          <option value="BE">Bélgica</option>
           <option value="BG">Bulgaria</option>
           <option value="CZ">Chequia</option>
           <option value="DK">Dinamarca</option>
@@ -116,7 +126,13 @@ function DoughnutChart() {
           <option value="TR">Turquia</option>
         </select>
 
-        <select onChange={(event) => setSecondCountry(event.target.value)}>
+        <select
+          onChange={(event) => {
+            let valor = event.target.selectedIndex;
+            setSecondCountry(event.target.value);
+            setNameSecondChart(event.target.options[valor].text);
+          }}
+        >
           <option value="EU27_2020">País 2</option>
           <option value="EU27_2020">Unión Europea</option>
           <option value="BE">Belgia</option>
@@ -157,45 +173,42 @@ function DoughnutChart() {
         </select>
         <input type="submit" className="doughnut-button" value="Representar" />
       </form>
-      {data ? (
-        <div className="doughnut-div">
-          <p className="first-percentage">{firstPercentage}%</p>
-          <Doughnut
-            data={firstDoughnut}
-            options={{
-              responsive: true,
-              maintainAspectRatio: true,
-              title: {
-                display: true,
-                text: firstCountry,
-                fontSize: 20,
-                position: "bottom",
-              },
-              legend: {
-                display: false,
-              },
-            }}
-          />
-          <p className="second-percentage">{secondPercentage}%</p>
-          <Doughnut
-            data={secondDoughnut}
-            options={{
-              responsive: true,
-              title: {
-                display: true,
-                text: secondCountry,
-                fontSize: 20,
-                position: "bottom",
-              },
-              legend: {
-                display: false,
-              },
-            }}
-          />
-        </div>
-      ) : (
-        <></>
-      )}
+
+      <div className="doughnut-div">
+        <p className="first-percentage">{firstPercentage}%</p>
+        <Doughnut
+          data={firstDoughnut}
+          options={{
+            responsive: true,
+            maintainAspectRatio: true,
+            title: {
+              display: true,
+              text: titleFirstChart,
+              fontSize: 20,
+              position: "bottom",
+            },
+            legend: {
+              display: false,
+            },
+          }}
+        />
+        <p className="second-percentage">{secondPercentage}%</p>
+        <Doughnut
+          data={secondDoughnut}
+          options={{
+            responsive: true,
+            title: {
+              display: true,
+              text: titleSecondChart,
+              fontSize: 20,
+              position: "bottom",
+            },
+            legend: {
+              display: false,
+            },
+          }}
+        />
+      </div>
     </div>
   );
 }
