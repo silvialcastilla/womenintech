@@ -20,8 +20,6 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignContent: 'center',
         padding: 0,
-        minHeight: '72px',
-        maxHeight: '72px'
     },
     title: {
         flexGrow: 1,
@@ -68,7 +66,7 @@ export default function NavBar(props) {
                         <img src={LogoTheBridge} alt="logo-the-bridge" />
                     </div>
                     <div className="nav-desktop">
-                        <Link to="/Dashboard" className={`menu-link ${activeOne && 'active'}`} onClick={()=> handleClick(1)}><span className="menu-highlight">Dashboard</span></Link>
+                        <Link to="/" className={`menu-link ${activeOne && 'active'}`} onClick={()=> handleClick(1)}><span className="menu-highlight">Dashboard</span></Link>
                         <Link to="/nosotras" className={`menu-link ${activeTwo && 'active'}`} onClick={()=> handleClick(2)}><span className="menu-highlight">Nosotras</span></Link>
                         <a href="https://thebridge.tech/" target="_blank" className="menu-link"><span className="menu-highlight">The Bridge</span></a>
                     </div>

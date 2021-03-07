@@ -1,14 +1,15 @@
 import React from "react";
 import Doughnut from "../../components/DoughnutChart/DoughnutChart";
-import back from "../../assets/img/8M.png";
+import MultiLine from "../../components/MultiLine/index";
 import "./HomePage.css";
+import Container from "../../components/container/index";
 
 function HomePage() {
   return (
     <div className="home-page">
       <div>
         <div className="rectang"></div>
-        <h3>Nuestra hipótesis</h3>
+        <h3 className="main-title">Nuestra hipótesis</h3>
         <p className="home-page-first-p">
           Para evaluar el impacto de la presencia de la mujer en el mundo
           tecnológico y digital, buscamos validar o refutar la siguiente
@@ -18,8 +19,8 @@ function HomePage() {
             desarrollo de los países, porque habrá más mujeres en puestos de
             responsabilidad y en empleos TIC”.
           </i>
-          <br />
-          <br />
+        </p>
+        <p className="home-page-second-p">
           Con los siguientes datos pretendemos mostrar como se valida dicha
           hipótesis.
         </p>
@@ -27,7 +28,7 @@ function HomePage() {
       <div>
         <div className="rectangu"></div>
         <h3 className="our-data">Nuestros datos</h3>
-        <div className="home-page-general-div">
+        <div className="home-page-general-div" id="home-page-first-div">
           <Doughnut />
           <div className="home-page-div-left">
             <p className="titles-left">
@@ -53,11 +54,12 @@ function HomePage() {
             </p>
             <p>Todos los datos se han obtenido de Eurostat.</p>
           </div>
-          <div className="lines-chart" />
+          <Container component={MultiLine} />
         </div>
-        <div className="home-page-general-div">
-          <div className="lines-chart-left" />
-          <div className="home-page-div-left">
+        <div className="home-page-general-div" id="home-page-third-div">
+          <Container component={MultiLine} />
+          {/* <div className="lines-chart-left" /> */}
+          <div className="home-page-div-left" id="home-page-div-left">
             <p className="titles-left">
               relación puestos de responsabilidad y desarrollo del país
             </p>
@@ -81,7 +83,8 @@ function HomePage() {
             </p>
             <p>Todos los datos se han obtenido de Eurostat.</p>
           </div>
-          <div className="lines-chart" />
+          {/* <div className="lines-chart" /> */}
+          <Container component={MultiLine} />
         </div>
       </div>
     </div>
