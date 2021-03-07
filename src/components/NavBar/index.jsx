@@ -20,8 +20,6 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignContent: 'center',
         padding: 0,
-        minHeight: '72px',
-        maxHeight: '72px'
     },
     title: {
         flexGrow: 1,

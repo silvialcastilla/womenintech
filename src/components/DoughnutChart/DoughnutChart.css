@@ -2,19 +2,21 @@
   background-color: #66149c;
   border-radius: 12px;
   width: 512px;
-  height: 340px;
+  height: 100%;
   border-radius: 12px;
+  padding-bottom: 15px;
 }
 
 .form {
-  width: 512px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 29px 8%;
 }
 
 select {
   background-color: #66149c;
   color: white;
-  margin-top: 45px;
-  margin-left: 30px;
   border-radius: 10px;
   text-decoration: none;
   border: 0;
@@ -28,7 +30,7 @@ option {
   margin-right: 60.04px;
 }
 
-.doughnut-button {
+/* .doughnut-button {
   margin-top: 29px;
   margin-left: 25px;
   padding: 12px 14px;
@@ -41,17 +43,26 @@ option {
   width: 106px;
 
   /* BG */
-
+/*
   background: #fffafe;
   box-shadow: 0px 4px 12px #3b0c5a;
   border-radius: 12px;
+} */
+
+.number-percentage{
+  color: #FFFAFE;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 52px;
 }
 
 .first-percentage {
-  position: relative;
+  position: absolute;
+  top: 78px;
   left: 110px;
-  top: 115px;
-  color: white;
+  color: #FFFAFE;
   margin: 0;
 }
 
@@ -59,11 +70,18 @@ option {
   position: relative;
   right: 220px;
   top: 115px;
-  color: white;
+  color: #FFFAFE;
   margin: 0;
 }
 .doughnut-div {
   display: flex;
   flex-direction: row;
+  position: relative;
   /* justify-content: center; */
+}
+
+@media only screen and (max-width: 1400px) {
+.doughnut{
+  margin-top: 48px;
+}
 }

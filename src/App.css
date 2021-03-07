@@ -2,15 +2,8 @@
   font-family: "Inter", sans-serif;
   color: #22172b;
 }
-body{
-  background-color: #FFFAFE;
-}
 
-@media (max-width: 768px) {
-  .home-page {
-    margin: 150px 60px 75px 60px;
-    width: 75%;
-  }
+/* @media (max-width: 1400px) {
   .about-page {
     margin-left: 60px;
   }
@@ -23,39 +16,46 @@ body{
     justify-content: space-around;
     margin: 0;
   }
+  .home-page-second-p{
+    margin-bottom: 22px;
+  }
   .our-data {
-    margin-top: 130px;
+    margin-top: 0px;
     margin-bottom: 20px;
   }
-
+  
   .home-page-div-left {
-    margin-top: 20px;
-    width: 80%;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
   .home-page-div-right {
     margin-top: 150px;
     width: 80%;
   }
+  
 }
 
 canvas {
   position: relative;
-  margin-top: 20px;
-  right: 170px;
+  margin: 0;
+  right: 22%;
   width: 150px;
   height: 150px;
 }
 
 canvas:nth-child(3n) {
-  right: 500px;
-}
+  right: 89%;
+  /* right: 500px; */
+/* } */
 
 body {
   background-image: url("./assets/img/8M.png");
   height: 500px; /* You must set a specified height */
-  background-position: center; /* Center the image */
+  background-position: top; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
+  background-color: #FFFAFE;
 }
 
 h3 {
@@ -74,26 +74,8 @@ p {
   color: #22172b;
 }
 
-.titles-left {
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 22px;
-  letter-spacing: 1.75px;
-  text-align: left;
-  text-transform: uppercase;
-}
-.titles-right {
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 22px;
-  letter-spacing: 1.75px;
-  text-align: left;
-  text-transform: uppercase;
-}
+
+
 h1,
 h2,
 h3,

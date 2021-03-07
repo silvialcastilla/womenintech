@@ -117,6 +117,9 @@ const lineOptions = {
         position: "left",
         ticks: {
           padding: 20,
+          min: dataFromFetch[0].data[0],
+          max: dataFromFetch[0].data[10],
+          stepSize: 5,
         },
       },
       {
@@ -124,8 +127,9 @@ const lineOptions = {
         type: "linear",
         position: "right",
         ticks: {
-          min: 0,
-          max: 100,
+          // min: dataFromFetch[1].data[0],
+          // max: dataFromFetch[1].data[10],
+          stepSize: 5,
           beginAtZero: true,
           callback: function (value) {
             return value + "M";
@@ -145,7 +149,7 @@ const lineOptions = {
       top: 0,
       bottom: 0,
     },
-    position: "none",
+    position: "center",
   },
 };
 
@@ -180,7 +184,7 @@ export default function MultiLine() {
         <Button click={()=>handleClick}/>
       </div>
       <div className="chart-container">
-        <Line data={finalData} width={100} height={50} options={lineOptions} />
+        <Line data={finalData} width={110} height={35} options={lineOptions} />
       </div>
       <div className="chart-legend">
         <div className="legend">

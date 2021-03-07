@@ -15,9 +15,6 @@
         position: absolute;
         left: 36px;
     }
-    .container{
-        margin: 0px;
-    }
 
     .menu-link{
         position: relative;
@@ -100,5 +97,11 @@
         }
       }
  
-    @media only screen and (max-width: 360px) {
+    @media only screen and (max-width: 812px) {
+        .MuiToolbar-root, .MuiToolbar-regular, .makeStyles-toolBar-2 .MuiToolbar-gutters{
+            min-height: 50px;
+        }
+        .logo-the-bridge > img{
+            width: 25px;
+        }
       }

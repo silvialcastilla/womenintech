@@ -7,7 +7,7 @@ canvas{
 .chart-container{
   position: relative;
 }
-.chart-container > div.chartjs-size-monitor > canvas.chartjs-render-monitor{
+.chart-container > canvas.chartjs-render-monitor{
   position: initial ! important;
 }
 .line-chart-header{
@@ -39,11 +39,9 @@ canvas{
 .legend-title{
   font-family: Inter;
   font-style: normal;
-  font-weight: 500;
   font-size: 12px;
   letter-spacing: -0.392308px;
   color: #96999C;
-  margin: 4px 0px;
 }
 
 .legend-circle-one, .legend-circle-two{
@@ -59,4 +57,15 @@ canvas{
 
 .legend-circle-two{
   background-color: #00CFFF;
+}
+@media only screen and (max-width: 812px) {
+  .chart-legend{
+    margin: 1px 0px 0px 50px;
+  }
+  .line-chart-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 0px 16px 0px;
+  }
 }
