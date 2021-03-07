@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 * {
   font-family: "Inter", sans-serif;
   color: #22172b;
@@ -91,8 +90,13 @@ p {
   letter-spacing: 1.75px;
   text-align: left;
   text-transform: uppercase;
-=======
-h1, h2, h3, h4, h5, h6, p{
-  margin:0;
->>>>>>> a20f3662242f79054365006a88dc4c8c48852ac5
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
