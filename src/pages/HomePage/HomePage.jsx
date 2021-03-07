@@ -3,7 +3,7 @@ import Doughnut from "../../components/DoughnutChart/DoughnutChart";
 import MultiLine from '../../components/MultiLine/index';
 import back from "../../assets/img/8M.png";
 import "./HomePage.css";
-import Container from '../../components/container'
+import Container from '../../components/Container'
 
 function HomePage() {
   return (
