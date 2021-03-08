@@ -37,8 +37,8 @@ export const countriesByCode = [
     {name: 'Turquía', code: 'TR'},
 ]
 
-export const countriesICT = [
-    {name: 'Unión Europea', code: 'EU27_2020'},
+export const countriesPIB = [
+    {name: 'España', code: 'ES'},
     {name: 'Alemania', code: 'DE'},
     {name: 'Austria', code: 'AT'},
     {name: 'Bélgica', code: 'BE'},
@@ -49,7 +49,6 @@ export const countriesICT = [
     {name: 'Dinamarca', code: 'DK'},
     {name: 'Eslovaquia', code: 'SK'},
     {name: 'Eslovenia', code: 'SI'},
-    {name: 'España', code: 'ES'},
     {name: 'Estonia', code: 'EE'},
     {name: 'Finlandia', code: 'FI'},
     {name: 'Francia', code: 'FR'},

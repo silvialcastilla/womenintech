@@ -31,7 +31,7 @@ export const getManagerial = async (country) => {
         return false
     }
 }
-export const getGbp = async (country) => {
+export const getGdp = async (country) => {
     try{
         const result = await fetch(`${BASE_URL}/gdp/${country}`)
         const data = await result.json()

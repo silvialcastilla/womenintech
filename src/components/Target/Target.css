@@ -1,9 +1,7 @@
 .target-little-container {
   width: 255px;
   height: 360px;
-  /* White/100% */
   background: #ffffff;
-  /* Black/200 */
   border: 2px solid #eaedee;
   border-radius: 12px;
   display: flex;
@@ -26,6 +24,8 @@
   letter-spacing: 1.75px;
   text-align: left;
   text-transform: uppercase;
+  color: #10182B;
+  margin: 16px 0px 0px 0px;
 }
 
 .target-img {
@@ -42,4 +42,5 @@
 
 .quote {
   margin-top: 30px;
+  font-size: 14px;
 }

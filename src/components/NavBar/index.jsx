@@ -52,10 +52,17 @@ export default function NavBar(props) {
         if(num === 1){
             setActiveOne(true)
             setActiveTwo(false)
+            console.log("¿ N0 s3r4s un/4 d3sarr0ll4d0r/4 curios@.... ?")
         }
         if(num === 2){
             setActiveTwo(true)
             setActiveOne(false)
+            console.log("¿ Te gustaría formarte con nostras ?")
+        }
+        if(num === 3){
+            setActiveTwo(false)
+            setActiveOne(false)
+            console.log("Solicita más información")
         }
     }
     return (
@@ -68,7 +75,7 @@ export default function NavBar(props) {
                     <div className="nav-desktop">
                         <Link to="/" className={`menu-link ${activeOne && 'active'}`} onClick={()=> handleClick(1)}><span className="menu-highlight">Dashboard</span></Link>
                         <Link to="/nosotras" className={`menu-link ${activeTwo && 'active'}`} onClick={()=> handleClick(2)}><span className="menu-highlight">Nosotras</span></Link>
-                        <a href="https://thebridge.tech/" target="_blank" className="menu-link"><span className="menu-highlight">The Bridge</span></a>
+                        <a href="https://thebridge.tech/" target="_blank" className="menu-link" onClick={()=> handleClick(3)}><span className="menu-highlight">The Bridge</span></a>
                     </div>
                     <div className="nav-tablet">
                         <MobileMenu />

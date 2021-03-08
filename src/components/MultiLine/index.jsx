@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
-import { getManagerial, getGbp } from "../../utils/data";
+import { getManagerial, getGdp } from "../../utils/data";
 import Select from '../Select/Select'
 import Button from '../Button/Button'
 import "./styles.css";
@@ -37,8 +37,8 @@ const lineOptions = {
         position: "left",
         ticks: {
           padding: 20,
-          min: 35,
-          max: 55,
+          min: 20,
+          max: 100,
           stepSize: 20,
         },
       },
@@ -47,8 +47,8 @@ const lineOptions = {
         type: "linear",
         position: "right",
         ticks: {
-          // min: dataFromFetch[1].data[0],
-          // max: dataFromFetch[1].data[10],
+          min: 0,
+          max: 4,
           stepSize: 5,
           beginAtZero: true,
           callback: function (value) {
@@ -115,8 +115,8 @@ export default function MultiLine() {
   };
   
   const [info, setInfo] = useState(null);
-  const [option, setOption] = useState('EU27_2020')
-  const [country, setCountry] = useState('EU27_2020');
+  const [option, setOption] = useState('ES')
+  const [country, setCountry] = useState('ES');
 
     // fetch
     // formatear data
@@ -126,18 +126,17 @@ export default function MultiLine() {
 
   const formatDataOne = (data1, data2) =>{
     const firstData = data1 ? data1.data.map(e => !e ? null : e) : []
-    const secondData = data2 ? data2.data.map(e => !e ? null : e) : []
+    const secondData = data2 ? data2.data.map(e => !e ? null : e/1000000) : []
     finalData.datasets[0].data = firstData
     finalData.datasets[1].data = secondData
     setInfo(finalData)
-    console.log("puestos de responsabilidad", firstData, "PIB", secondData)
   }
 
   useEffect(async () => {
     try {
-      const managerial = await getManagerial("EU27_2020");
-      const gbp = await getGbp("EU27_2020")
-    formatDataOne(managerial, gbp)
+      const managerial = await getManagerial("ES");
+      const gdp = await getGdp("ES")
+      formatDataOne(managerial, gdp)
     } catch (err){
       console.log("error", err)
     }
@@ -146,8 +145,8 @@ export default function MultiLine() {
   useEffect(async () => {
     try{
       const managerial = await getManagerial(country);
-      const gbp = await getGbp(country)
-      formatDataOne(managerial, gbp);
+      const gdp = await getGdp(country)
+      formatDataOne(managerial, gdp);
     } catch (err){
       console.log("error", err)
     }
@@ -165,11 +164,11 @@ export default function MultiLine() {
     <div className="lineal">
       <div className="line-chart-header">
         <h2 className="chart-title">Puestos de responsabilidad vs desarrollo</h2>
-        <Select type={'country'} getValue={handleChange} value={country}/>
+        <Select type={'pib'} getValue={handleChange} value={country}/>
         <Button click={handleClick}/>
       </div>
       <div className="chart-container">
-        <Line data={info && info} width={110} height={35} options={lineOptions} />
+        <Line data={info} width={110} height={35} options={lineOptions} />
       </div>
       <div className="chart-legend">
         <div className="legend">

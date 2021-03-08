@@ -28,13 +28,13 @@ function AboutUsPage() {
     {
       name: "Nora",
       profession: "Fullstack Developer",
-      description: "lorem",
+      description: "Oooooooooh.....I TURN COFFEE INTO CODE",
       img: Nora,
     },
     {
       name: "Sol",
       profession: "Fullstack Developer",
-      description: "lorem",
+      description: "Poder crear soluciones desde algo intangible, como es el código, resolver problemas distintos en cada proyecto, aprender de la comunidad y compartir lo aprendido",
       img: Sol,
     },
     {

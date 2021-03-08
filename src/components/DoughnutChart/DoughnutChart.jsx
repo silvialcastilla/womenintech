@@ -26,7 +26,6 @@ function DoughnutChart() {
         ` https://tecnologia-sustantivo-femenino.herokuapp.com/edu/${firstCountry}/${year}`
       )
       .then((res) => {
-        console.log("respuesta de axios", res)
         setFirstPercentage(res.data.data.female.toString());
         setDataFirstChart([res.data.data.female.toString(), res.data.data.male.toString()]);
         setTitleFirstChart(nameFirstChart);
