@@ -1,6 +1,7 @@
 import React from "react";
 import Doughnut from "../../components/DoughnutChart/DoughnutChart";
 import MultiLine from "../../components/MultiLine/index";
+import SingleLine from "../../components/SingleLine/index";
 import "./HomePage.css";
 import Container from "../../components/container/index";
 
@@ -54,7 +55,7 @@ function HomePage() {
             </p>
             <p>Todos los datos se han obtenido de Eurostat.</p>
           </div>
-          <Container component={MultiLine} />
+          <Container component={SingleLine} />
         </div>
         <div className="home-page-general-div" id="home-page-third-div">
           <Container component={MultiLine} />

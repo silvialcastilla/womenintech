@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
-import { getManagerial, getGbp } from "../../utils/data";
-import Select from '../Select/Select'
-import Button from '../Button/Button'
+import { getEduWomanData, getWomenTic } from "../../utils/data";
+import Select from "../Select/Select";
+import Button from "../Button/Button";
 import "./styles.css";
 
 const lineOptions = {
@@ -37,9 +37,8 @@ const lineOptions = {
         position: "left",
         ticks: {
           padding: 20,
-          min: 35,
+          min: 15,
           max: 55,
-          stepSize: 20,
         },
       },
       {
@@ -47,17 +46,18 @@ const lineOptions = {
         type: "linear",
         position: "right",
         ticks: {
-          // min: dataFromFetch[1].data[0],
-          // max: dataFromFetch[1].data[10],
-          stepSize: 5,
+          min: 15,
+          max: 55,
           beginAtZero: true,
           callback: function (value) {
             return value + "M";
           },
           padding: 20,
+          display: true,
+          fontColor: "transparent",
         },
         scaleLabel: {
-          display: true,
+          display: false,
         },
       },
     ],
@@ -73,16 +73,14 @@ const lineOptions = {
   },
 };
 
-
-
-export default function MultiLine() {
+export default function SingleLine() {
   const finalData = {
     labels: ["2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019"],
-    datasets: [
+    datasets:[
       {
         label: "Mujeres en educación secundaria o superior",
         yAxisID: "Mujeres en educación secundaria o superior",
-        data: [51, 51, 51, 52, 52, 51, 52, 52, 52, 52, 53],
+        data: [],
         fill: false,
         borderColor: "#8C0582",
         backgroundColor: "transparent",
@@ -92,13 +90,13 @@ export default function MultiLine() {
         borderDashOffset: 10,
         borderJoinStyle: "miter",
         pointRadius: 1,
-        pointBorderColor: 'transparent',
-        pointBackgroundColor: '#8C0582',
+        pointBorderColor: "transparent",
+        pointBackgroundColor: "#8C0582",
       },
       {
         label: "Mujeres trabajando en empleos TIC",
         yAxisID: "Mujeres trabajando en empleos TIC",
-        data: [22.7, 22.7, 20.2, 19.6, 19.8, 18.7, 18.8, 17.6, 16.7, 17.8, 19.7],
+        data: [],
         fill: false,
         borderColor: "#00CFFF",
         lineTension: 0,
@@ -108,21 +106,20 @@ export default function MultiLine() {
         borderDashOffset: 10,
         borderJoinStyle: "miter",
         pointRadius: 1,
-        pointBorderColor: 'transparent',
-        pointBackgroundColor: '#00CFFF',
-      },
+        pointBorderColor: "transparent",
+        pointBackgroundColor: "#00CFFF",
+      }
     ]
-  };
-  
+  }
   const [info, setInfo] = useState(null);
   const [option, setOption] = useState('EU27_2020')
   const [country, setCountry] = useState('EU27_2020');
 
-    // fetch
-    // formatear data
-    // setInfo
-    // setOption en change
-    // setCountry en click
+  // fetch
+  // formatear data
+  // setInfo
+  // setOption en change
+  // setCountry en click
 
   const formatDataOne = (data1, data2) =>{
     const firstData = data1 ? data1.data.map(e => !e ? null : e) : []
@@ -130,14 +127,13 @@ export default function MultiLine() {
     finalData.datasets[0].data = firstData
     finalData.datasets[1].data = secondData
     setInfo(finalData)
-    console.log("puestos de responsabilidad", firstData, "PIB", secondData)
   }
 
   useEffect(async () => {
     try {
-      const managerial = await getManagerial("EU27_2020");
-      const gbp = await getGbp("EU27_2020")
-    formatDataOne(managerial, gbp)
+      const eduWomanData = await getEduWomanData("EU27_2020");
+      const womenTic = await getWomenTic("EU27_2020")
+    formatDataOne(eduWomanData, womenTic)
     } catch (err){
       console.log("error", err)
     }
@@ -145,28 +141,28 @@ export default function MultiLine() {
 
   useEffect(async () => {
     try{
-      const managerial = await getManagerial(country);
-      const gbp = await getGbp(country)
-      formatDataOne(managerial, gbp);
+      const eduWomanData = await getEduWomanData(country);
+      const womenTic = await getWomenTic(country)
+      formatDataOne(eduWomanData, womenTic);
     } catch (err){
       console.log("error", err)
     }
   }, [country]);
 
-  const handleChange = (value) => {
-    setOption(value);
+    const handleChange = (value) => {
+      setOption(value);
+    };
+    
+    const handleClick = async() => {
+      setCountry(option)
   };
-
-  const handleClick = async() => {
-    setCountry(option)
-  };
-
+  
   return (
     <div className="lineal">
       <div className="line-chart-header">
-        <h2 className="chart-title">Puestos de responsabilidad vs desarrollo</h2>
-        <Select type={'country'} getValue={handleChange} value={country}/>
-        <Button click={handleClick}/>
+        <h2 className="chart-title">Educación vs empleos TIC</h2>
+        <Select type={"country"} getValue={handleChange} value={option} />
+        <Button click={handleClick} />
       </div>
       <div className="chart-container">
         <Line data={info && info} width={110} height={35} options={lineOptions} />
@@ -175,12 +171,12 @@ export default function MultiLine() {
         <div className="legend">
           <div className="legend-circle-one"></div>
           <p className="legend-title">
-            Mujeres en puestos de responsabilidad
+            Mujeres en educación secundaria o superior
           </p>
         </div>
         <div className="legend">
           <div className="legend-circle-two"></div>
-          <p className="legend-title">PIB del país</p>
+          <p className="legend-title">Mujeres trabajando en empleos TIC</p>
         </div>
       </div>
     </div>
